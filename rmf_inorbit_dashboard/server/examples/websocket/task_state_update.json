@@ -1,0 +1,66 @@
+{
+  "data": {
+    "active": 2,
+    "assigned_to": { "group": "InOrbitWarehouse", "name": "tugz335" },
+    "booking": {
+      "id": "patrol.dispatch-0",
+      "unix_millis_earliest_start_time": 1677794704118
+    },
+    "category": "Patrol",
+    "completed": [1],
+    "detail": "",
+    "estimate_millis": 89995,
+    "original_estimate_millis": 94563,
+    "pending": [],
+    "phases": {
+      "1": {
+        "category": "Go to [place:e03]",
+        "detail": "Moving the robot from [place:e03] to [place:e03]",
+        "estimate_millis": 0,
+        "events": {
+          "0": {
+            "deps": [],
+            "detail": "Moving the robot from [place:e03] to [place:e03]",
+            "id": 0,
+            "name": "Go to [place:e03]",
+            "status": "completed"
+          }
+        },
+        "final_event_id": 0,
+        "id": 1,
+        "original_estimate_millis": 0,
+        "unix_millis_finish_time": 1677794707113,
+        "unix_millis_start_time": 1677794707112
+      },
+      "2": {
+        "category": "Go to [place:p04]",
+        "detail": "Moving the robot from [place:e03] to [place:p04]",
+        "estimate_millis": 89995,
+        "events": {
+          "0": {
+            "deps": [1],
+            "detail": "Moving the robot from [place:e03] to [place:p04]",
+            "id": 0,
+            "name": "Go to [place:p04]",
+            "status": "standby"
+          },
+          "1": {
+            "deps": [],
+            "detail": "",
+            "id": 1,
+            "name": "Move to [place:p04]",
+            "status": "standby"
+          }
+        },
+        "final_event_id": 0,
+        "id": 2,
+        "original_estimate_millis": 94563,
+        "unix_millis_start_time": 1677794707113
+      }
+    },
+    "status": "standby",
+    "unix_millis_finish_time": 1677794797158,
+    "unix_millis_start_time": 1677794707112
+  },
+  "type": "task_state_update"
+}

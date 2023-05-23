@@ -1,0 +1,4 @@
+websockets >= 10.4
+fastapi >= 0.94.1
+uvicorn[standard] >= 0.21.1
+pydantic >= 1.10

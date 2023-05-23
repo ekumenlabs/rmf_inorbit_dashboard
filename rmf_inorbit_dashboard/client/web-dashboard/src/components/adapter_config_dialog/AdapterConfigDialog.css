@@ -1,0 +1,20 @@
+input[type=file] {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: #1976d2;
+}
+
+input::file-selector-button {
+  border: 1px solid #1976d2;
+  border-radius: 5px;
+  color: #1976d2;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-right: 1em;
+
+}
+
+input::file-selector-button:hover {
+  border: 1px solid black;
+}
+

@@ -1,0 +1,20 @@
+{
+  "data": {
+    "phases": {
+      "1": {
+        "events": {
+          "0": [
+            {
+              "seq": 0,
+              "text": "Generating plan to move from [e03] to [e03]",
+              "tier": "info",
+              "unix_millis_time": 1677794707112
+            }
+          ]
+        }
+      }
+    },
+    "task_id": "patrol.dispatch-0"
+  },
+  "type": "task_log_update"
+}

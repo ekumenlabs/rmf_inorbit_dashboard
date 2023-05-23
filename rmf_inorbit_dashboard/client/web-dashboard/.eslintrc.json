@@ -1,0 +1,178 @@
+{
+    "extends": [
+      "airbnb/base",
+          "plugin:react/recommended",
+          "plugin:import/recommended"
+    ],
+
+      "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+
+    "plugins": [
+          "import",
+          "jsx-a11y",
+          "react",
+          "react-hooks",
+          "import"
+      ],
+
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      "*.stories.ts",
+      "*.spec.ts",
+          "*.json"
+    ],
+
+    "env":{
+      "browser": true,
+      "node": true
+    },
+
+
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"],
+          "moduleDirectory": ["node_modules", "src/"]
+        }
+      }
+    },
+
+
+    "rules": {
+      "import/no-unresolved": "error",
+      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/extensions": 0,
+      "import-name": 0,
+
+          // Indenting & tabs/spaces
+      "indent": ["error", 2, {
+        "ignoredNodes": ["TemplateLiteral > *"],
+        "SwitchCase": 1
+      }],
+          "no-tabs": 0,
+
+      "operator-linebreak": ["error", "after",
+        {
+          "overrides": {
+            "?": "before",
+            ":": "before"
+          }
+        }],
+      "no-multiple-empty-lines": ["error", {"max": 2}],
+      "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+      "padded-blocks": 0,
+
+      "no-restricted-syntax": 0,
+      "no-cond-assign": 0,
+
+      // Prevent ESlint complaining about related interfaces being accessed before definition
+      "no-use-before-define": "off",
+
+      "no-unused-vars": "off",
+
+      "no-unused-expressions": "off",
+      "array-bracket-spacing": ["error", "never"],
+      "arrow-parens": ["error", "always"],
+      "class-methods-use-this": 0,
+
+      "comma-dangle": ["error", "only-multiline"],
+
+      "computed-property-spacing": ["error", "never"],
+
+      "consistent-return": 0,
+      "no-return-assign": 0,
+
+      "implicit-arrow-linebreak": 0,
+      "import/no-cycle": 0,
+      "linebreak-style": 0,
+      "max-classes-per-file": 0, // Leads to too many files
+      "no-empty": [2, {
+        "allowEmptyCatch": true
+      }],
+
+
+      "no-await-in-loop": 0,
+
+          "camelcase": 0,
+      "no-underscore-dangle": 0,
+      "object-curly-newline": 0,
+      "object-curly-spacing": ["error", "always"],
+      "no-nested-ternary": 0,
+      "no-case-declarations": 0,
+
+      "no-bitwise": 0,
+      "radix": 0,
+
+      "default-case": 0,
+      "no-param-reassign": ["error", {"props": false}],
+      "no-multi-assign": 0,
+      "max-len": ["error", { "code": 140 }],
+
+          "spaced-comment": ["error", "always", { "line": { "exceptions": ["*"] } }],
+
+          "no-shadow": "off",
+
+      "no-console": ["error"],
+
+          // React & JSX
+          "react/prop-types": "off",
+          // "react/destructuring-assignment": 2,
+          "react/self-closing-comp": ["error", {
+              "component": true,
+              "html": true
+          }],
+      "jsx-quotes": ["error", "prefer-double"],
+          "react/jsx-boolean-value": 2,
+          "react/jsx-closing-bracket-location": [2, "line-aligned"],
+          "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
+          "react/jsx-curly-newline": [2, "consistent"],
+          "react/jsx-equals-spacing": [2, "never"],
+          "react/jsx-fragments": [2, "syntax"],
+          "react/jsx-handler-names": 2,
+          "react/jsx-indent": [2, 2],
+          "react/jsx-indent-props": [2, 2],
+          "react/jsx-no-useless-fragment": 2,
+          "react/jsx-pascal-case": 2,
+          "react/jsx-tag-spacing": [2, {
+              "closingSlash": "never",
+              "beforeSelfClosing": "always",
+              "afterOpening": "never",
+              "beforeClosing": "allow"
+          }],
+          "react/jsx-wrap-multilines": [2, {
+              "declaration": "ignore",
+              "assignment": "ignore",
+              "return": "parens-new-line",
+              "arrow": "ignore",
+              "condition": "ignore",
+              "logical": "ignore",
+              "prop": "ignore"
+          }],
+      "react/display-name": 0,
+
+          // Import order
+          "import/order": [
+              "error", {
+                  "groups": [
+                      ["builtin", "external"],
+            ["internal"],
+                      ["parent", "sibling"],
+                      ["index"],
+                      ["object", "type"]
+                  ],
+                  "newlines-between": "always-and-inside-groups"
+              }
+          ]
+    }
+  }

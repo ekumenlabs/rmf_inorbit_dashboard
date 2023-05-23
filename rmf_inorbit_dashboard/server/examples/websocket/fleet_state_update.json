@@ -1,0 +1,36 @@
+{
+  "data": {
+    "name": "InOrbitWarehouse",
+    "robots": {
+      "tugz334": {
+        "battery": 1.0,
+        "issues": [],
+        "location": {
+          "map": "L0",
+          "x": 14.579060554504395,
+          "y": -1.6359738111495972,
+          "yaw": 1.6699999570846558
+        },
+        "name": "tugz334",
+        "status": "idle",
+        "task_id": "",
+        "unix_millis_time": 1677794696290
+      },
+      "tugz335": {
+        "battery": 1.0,
+        "issues": [],
+        "location": {
+          "map": "L0",
+          "x": 9.606778144836426,
+          "y": -13.153291702270508,
+          "yaw": 1.6699999570846558
+        },
+        "name": "tugz335",
+        "status": "idle",
+        "task_id": "",
+        "unix_millis_time": 1677794696290
+      }
+    }
+  },
+  "type": "fleet_state_update"
+}

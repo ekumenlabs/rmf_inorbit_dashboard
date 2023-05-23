@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rmf_inorbit_dashboard</name>
+  <version>0.1.0</version>
+  <description>REST and WS API designed to be consumed from the InOrbit/Ekumen RMF dashboard</description>
+
+  <author email="eabramzon@ekumenlabs.com">Enrique Abramzon</author>
+  <author email="tomasbadenes@gmail.com">Tomás Badenes</author>
+  <author email="ag.albachicar@ekumenlabs.com">Agustin Alba Chicar</author>
+  <maintainer email="julian@inorbit.ai">Julian Cerruti</maintainer>
+
+  <url type="repository">https://github.com/ekumenlabs/rmf_inorbit_dashboard</url>
+  <license file="LICENSE">3-Clause BSD License</license>
+
+  <exec_depend>python3-fastapi</exec_depend>
+  <exec_depend>python3-websockets</exec_depend>
+  <exec_depend>python3-uvicorn</exec_depend>
+  <exec_depend>rmf_task_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
