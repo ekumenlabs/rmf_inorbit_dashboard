@@ -97,7 +97,7 @@ If you don't have an installed version of NodeJs, we recommend installing the la
 If you need to manage different versions of NodeJs for other projects on your local machine, we recommend using NVM.
 You can find a detailed installation guide here: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 
-Both will work, anyway we think nvm is easier to use:
+Both will work, anyway we think nvm is easier to use.
 Install:
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
