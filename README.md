@@ -207,7 +207,7 @@ view the monitored robots.
 When running the demo, make sure to refer to the [account setup](https://github.com/inorbit-ai/rmf_inorbit_examples/blob/main/rmf_inorbit_demos/README.md#account-setup)
 or obtain the keys.
 
-You need two separate workspaces in the same docker container to launch the demo and the dashboard. You can use [Tmux]((https://github.com/tmux/tmux/wiki)) for this purpose.
+You need two separate workspaces in the same docker container to launch the demo and the dashboard. You can use [Tmux](https://github.com/tmux/tmux/wiki) for this purpose.
 
 ```
 echo "export INORBIT_API_KEY=<your api key>" >> ~/.bashrc
