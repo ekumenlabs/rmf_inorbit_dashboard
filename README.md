@@ -227,7 +227,7 @@ ros2 launch rmf_inorbit_dashboard server.launch.py
 ```
 
 Now, point your browser to `http://127.0.0.1:8001` and you'll be prompted to include
-the fleet adapter, navigration graph and InOrbit Embeds API key as the following shows.
+the fleet adapter, navigation graph and InOrbit Embeds API key as the following shows.
 
 ![Initial configuration](assets/initial_configuration.gif)
 
