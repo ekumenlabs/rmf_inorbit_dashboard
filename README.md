@@ -34,6 +34,7 @@ Create a ROS 2 workspace and clone the following repositories in the `src` folde
 mkdir src
 git clone https://github.com/inorbit-ai/rmf_inorbit_examples src/rmf_inorbit_examples
 git clone https://github.com/inorbit-ai/ros_amr_interop src/ros_amr_interop
+git clone https://github.com/ekumenlabs/rmf_inorbit_dashboard.git
 ```
 
 And checkout [`ros_amr_interop`](https://github.com/inorbit-ai/ros_amr_interop) to the
