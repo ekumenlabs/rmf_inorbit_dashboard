@@ -50,6 +50,22 @@ package from this repository.
 Also, we bring in [rmf_inorbit_examples](https://github.com/inorbit-ai/rmf_inorbit_examples) to walk through a complete demo.
 Other projects are expected to have a concrete implementation based on [`rmf_inorbit_template`](https://github.com/inorbit-ai/rmf_inorbit_examples/tree/main/rmf_inorbit_template) with their own configurations.
 
+For the full demonstration purposes, please revisit the requirements of each repository for extra packages.
+In particular, take a look at the installation requirements of [`rmf_fleet_adapter`](https://github.com/inorbit-ai/ros_amr_interop/tree/humble-devel/rmf_inorbit_fleet_adapter#workspace-setup) and [`rmf_inorbit_demo`](https://github.com/inorbit-ai/rmf_inorbit_examples/tree/main/rmf_inorbit_demos#environment-setup).
+
+We recommend using the provided docker environment. For a more detailed non-docker setup, please check the rmf_fleet_adapter readme document.
+The docker container for this example is in:
+```
+src/rmf_inorbit_dashboard/docker
+```
+## Build and run the docker container.
+```
+./src/rmf_inorbit_dashboard/docker/build.sh
+./src/rmf_inorbit_dashboard/docker/run.sh
+```
+
+From this point, continue the setup in the docker workspace "your@computer:~/ws$"
+
 ## Install dependencies
 
 ### ROS 2 dependencies
@@ -68,9 +84,6 @@ Some specific packages need to meet certain version requirements. It is recommen
 pip3 install -r src/rmf_inorbit_dashboard/requirements.txt
 ```
 
-For the full demonstration purposes, please revisit the requirements of each repository for extra packages.
-In particular, take a look at the installation requirements of [`rmf_fleet_adapter`](https://github.com/inorbit-ai/ros_amr_interop/tree/humble-devel/rmf_inorbit_fleet_adapter#workspace-setup) and [`rmf_inorbit_demo`](https://github.com/inorbit-ai/rmf_inorbit_examples/tree/main/rmf_inorbit_demos#environment-setup).
-
 ### Frontend dependencies
 
 Check if you have NODE installed and which version:
@@ -83,10 +96,29 @@ If you don't have an installed version of NodeJs, we recommend installing the la
 If you need to manage different versions of NodeJs for other projects on your local machine, we recommend using NVM.
 You can find a detailed installation guide here: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 
+Both will work, anyway we think nvm is easier to use:
+Install:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+Config:
+```
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+```
+Download and "use" a node version:
+```
+nvm install <latest LTS e.g. 18>
+nvm use 18
+```
+Check again if you have NODE installed and which version:
+```
+node --version
+```
 Move to the web dashboard folder to install `npm` dependencies:
 
 ```
-cd src/rmf_inorbit_dashboard/client/web-dashboard/
+cd src/rmf_inorbit_dashboard/rmf_inorbit_dashboard/client/web-dashboard/
 npm install
 ```
 
@@ -122,14 +154,14 @@ Eslint has been preconfigured in the project, and scripts were added in `rmf_ino
 To see the style errors run:
 
 ```
-cd src/rmf_inorbit_dashboard/client/web-dashboard/
+cd src/rmf_inorbit_dashboard/rmf_inorbit_dashboard/client/web-dashboard/
 npm run lint
 ```
 
 If you collaborate on this project, please run the following script to automatically fix all style issues before pushing to the repo:
 
 ```
-cd src/rmf_inorbit_dashboard/client/web-dashboard/
+cd src/rmf_inorbit_dashboard/rmf_inorbit_dashboard/client/web-dashboard/
 npm run lint:fix
 ```
 ## Launch
@@ -162,7 +194,7 @@ Arguments (pass arguments as '<name>:=<value>'):
 
 ### Launching the demo
 
-When running the demo, make sure you follow the instructions described in 
+When running the demo, make sure you follow the instructions described in
 the [environment setup](https://github.com/inorbit-ai/rmf_inorbit_examples/tree/main/rmf_inorbit_demos#environment-setup)
 and [starting a demo](https://github.com/inorbit-ai/rmf_inorbit_examples/tree/main/rmf_inorbit_demos#environment-setup)
 to start OpenRMF core, the OpenRMF InOrbit Fleet adapter and the proper configurations of the demo.
@@ -174,7 +206,7 @@ view the monitored robots.
 When running the demo, make sure to refer to the [account setup](https://github.com/inorbit-ai/rmf_inorbit_examples/blob/main/rmf_inorbit_demos/README.md#account-setup)
 or obtain the keys.
 
-To launch the demo, add the InOrbit API key as an environment variable:
+You need two separate workspaces in the same docker container to launch the demo and the dashboard. You can use [Tmux]((https://github.com/tmux/tmux/wiki)) for this purpose.
 
 ```
 echo "export INORBIT_API_KEY=<your api key>" >> ~/.bashrc
@@ -184,6 +216,7 @@ source ~/.bashrc
 And launch the demo:
 
 ```
+source ./install/setup.bash
 ros2 launch rmf_inorbit_demos warehouse.launch.xml
 ```
 
