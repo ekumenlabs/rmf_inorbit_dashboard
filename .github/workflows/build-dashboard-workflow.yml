@@ -23,5 +23,5 @@ jobs:
       - run: pip install -r requirements.txt
       - run: cd rmf_inorbit_dashboard/client/web-dashboard
              npm install
-      - run: cd ~/ws
+      - run: cd ../../../
       - run: colcon build --packages-up-to rmf_inorbit_dashboard
