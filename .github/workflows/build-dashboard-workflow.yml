@@ -21,4 +21,7 @@ jobs:
       - run: rosdep install --from-paths src --rosdistro humble -y --ignore-src
       - run: python3 -m pip install --upgrade pip
       - run: pip install -r requirements.txt
+      - run: cd rmf_inorbit_dashboard/client/web-dashboard
+             npm install
+      - run: cd ~/ws
       - run: colcon build --packages-up-to rmf_inorbit_dashboard
