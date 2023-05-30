@@ -24,4 +24,5 @@ jobs:
       - run: cd rmf_inorbit_dashboard/client/web-dashboard
              npm install
       - run: cd ../../../
-      - run: colcon build --packages-up-to rmf_inorbit_dashboard
+      - run: source /opt/ros/humble/setup.bash
+             colcon build --packages-up-to rmf_inorbit_dashboard
