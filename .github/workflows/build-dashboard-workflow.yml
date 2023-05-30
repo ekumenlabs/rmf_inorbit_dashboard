@@ -29,15 +29,15 @@ jobs:
       - uses: ros-tooling/setup-ros@v0.6
         with:
           required-ros-distributions: humble
-      ## - uses: ros-tooling/action-ros-ci@v0.3
-      ##   with:
-      ##     package-name: rmf_inorbit_dashboard
-      ##     target-ros2-distro: humble
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: rmf_inorbit_dashboard
+          target-ros2-distro: humble
       ## - run: rosdep update
       ## - run: mkdir src
       ## - run: rosdep install --from-paths src --rosdistro humble -y --ignore-src
 
 
       ## - run: cd ../../../
-      - run: source /opt/ros/humble/setup.bash
-             colcon build --packages-up-to rmf_inorbit_dashboard
+      ## - run: source /opt/ros/humble/setup.bash
+      ##     colcon build --packages-up-to rmf_inorbit_dashboard
