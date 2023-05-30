@@ -1,5 +1,11 @@
 name: build-dashboard-workflow
-on: [push]
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   build-dashboard:
     runs-on: ubuntu-latest
