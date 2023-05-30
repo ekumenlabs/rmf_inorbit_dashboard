@@ -1,0 +1,41 @@
+name: build-dashboard-workflow
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-dashboard:
+    runs-on: ubuntu-latest
+    container:
+      image: osrf/ros:humble-desktop
+
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      TERM: linux
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: npm-build
+        shell: bash
+        run: |
+          cd rmf_inorbit_dashboard/client/web-dashboard
+          npm install
+
+      - uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: humble
+
+      - run: pip install -r requirements.txt
+
+      - name: colcon-build
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          colcon build --packages-up-to rmf_inorbit_dashboard
