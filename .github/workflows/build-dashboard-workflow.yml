@@ -34,7 +34,7 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: building
+      - name: colcon-build
         shell: bash
         run: |
           source /opt/ros/humble/setup.bash
