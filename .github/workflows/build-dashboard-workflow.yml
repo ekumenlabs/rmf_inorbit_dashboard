@@ -10,7 +10,7 @@ jobs:
   build-dashboard:
     runs-on: ubuntu-latest
     container:
-      image: osrf/ros:humble-desktop
+      image: ubuntu:22.04
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: linux
@@ -20,8 +20,7 @@ jobs:
         with:
           node-version: '18'
 
-      - run: cd rmf_inorbit_dashboard/client/web-dashboard
-             npm install
+      - run: cd rmf_inorbit_dashboard/client/web-dashboard && npm install
       - uses: ros-tooling/setup-ros@v0.6
         with:
           required-ros-distributions: humble
@@ -32,10 +31,10 @@ jobs:
       ## - run: python3 -m pip install --upgrade pip
       - run: pip install -r requirements.txt
 
-      # - uses: ros-tooling/action-ros-ci@v0.3
-      #   with:
-      #     package-name: rmf_inorbit_dashboard
-      #     target-ros2-distro: humble
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: rmf_inorbit_dashboard
+          target-ros2-distro: humble
 
       ## - run: rosdep update
       ## - run: mkdir src
@@ -43,4 +42,4 @@ jobs:
 
 
       ## - run: cd ../../../
-      - run: source /opt/ros/humble/setup.bash && colcon build --packages-up-to rmf_inorbit_dashboard
+      ## - run: source /opt/ros/humble/setup.bash && colcon build --packages-up-to rmf_inorbit_dashboard
