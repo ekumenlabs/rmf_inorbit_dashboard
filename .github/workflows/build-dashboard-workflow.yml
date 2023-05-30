@@ -23,6 +23,6 @@ jobs:
       - run: pip install -r requirements.txt
       - run: cd rmf_inorbit_dashboard/client/web-dashboard
              npm install
-      - run: cd ../../../
+      ## - run: cd ../../../
       - run: source /opt/ros/humble/setup.bash
              colcon build --packages-up-to rmf_inorbit_dashboard
