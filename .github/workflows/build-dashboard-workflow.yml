@@ -10,7 +10,8 @@ jobs:
   build-dashboard:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:22.04
+      ## image: ubuntu:22.04
+      image: osrf/ros:humble-desktop
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: linux
